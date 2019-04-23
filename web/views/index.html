@@ -1,0 +1,36 @@
+<%include header.html%>
+      <div class="container">
+          <div class="row">
+              <div class="col-md-3">
+                  <ul class="list-group">
+                      <% tags.forEach(tag=>{ %>
+                           <li class="list-group-item">
+                                <a href="/?tagId=<%=tag.id%>" class="row" >
+                                    <div class="col-md-8" style="margin-top:6px;">
+                                        <img src="<%=tag.image%>" style="width:20px;height:20px; "/>
+                                        <%= tag.title%>
+                                    </div>
+                                    <div class="col-md-3" style="display:flex;justify-content:center; align-items:center; flex-direction:column;">
+                                      <span class="badge" style="margin-bottom:5px;"><%=tag.article%>文章</span>
+                                      <span class="badge"><%=tag.subscribe%>关注</span>
+                                    </div>
+                                </a>
+                           </li>
+                      <% }) %>
+                  </ul>
+              </div>
+              <div class="col-md-9">
+                  <ul class="list-group">
+                      <% articles.forEach(article=>{ %>
+                           <li class="list-group-item">
+                                <a href="/detail/<%=article.id%>">
+                                  <%=article.title%>
+                                </a>
+                           </li>
+                      <% }) %>
+                  </ul>
+              </div>
+          </div>
+      </div>
+
+<%include footer.html%>
