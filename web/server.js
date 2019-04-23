@@ -30,7 +30,7 @@ app.get('/detail/:id', async function (req, res) {
 
 
 
-app.listen(8080);
+app.listen(3003);
 
 const CronJob = require('cron').CronJob;
 const { spawn } = require('child_process')
